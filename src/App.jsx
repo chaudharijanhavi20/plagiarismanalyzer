@@ -5,16 +5,18 @@ import React from 'react';
 import Crd from './component/Crd';
 import styled from 'styled-components';
 import About from './component/About';
+import Navbar from './component/Navbar';
 
 function App() {
   return (
     <Appcontainer>
-    {/* <Crd/>
+      <Navbar />
     <Crd/>
     <Crd/>
     <Crd/>
     <Crd/>
-    <Crd/> */}
+    <Crd/>
+    <Crd/>
     <About/>
     </Appcontainer>
   );

@@ -6,11 +6,12 @@
     border-radius: 10px;
     box-shadow:  0px 1px 10px 1px;
    overflow: hidden;
+   background-color: #191825;
     
 }
 .upper-container{
     height: 70px;
-    background: linear-gradient(to left,rgb(156, 159, 160),rgb(1, 16, 20));
+    background: linear-gradient(to left,rgb(156, 159, 160),91825);
 }
 
 .image img{
@@ -29,13 +30,15 @@ img:hover{
   
 }
 img{
-    border:  2px solid rgb(1, 16, 20);
+    border:  2px solid #865DFF;
 }
 
 .lower-container {
    margin-top: 120px;
     text-align: center;
     font-weight: 500;
+    color: white;
+
    
 }
 .lower-container p{
@@ -48,14 +51,14 @@ button{
     font-weight: bold;
     color: black;
     background: white;
-    border: 2px solid rgb(1, 16, 20);
+    border: 2px solid #E384FF;
     border-radius: 6px;
     padding: 0.6rem;
     transition-duration: 0.5s;
     animation: ease-in-out;
 }
 button:hover{
-    background:linear-gradient(to left,rgb(132, 135, 136),rgb(1, 16, 20));
+    background:linear-gradient(to left,rgb(132, 135, 136),#865DFF);
     transform: scale(1.1);
     color: white;
 }
