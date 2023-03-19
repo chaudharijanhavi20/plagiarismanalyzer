@@ -7,18 +7,19 @@ import styled from 'styled-components';
 import About from './component/About';
 import  FooterSocial from './component/FooterSocial';
 
+import Navbar from './component/Navbar';
 
 function App() {
   return (
     <Appcontainer>
-    {/* <Crd/>
+      <Navbar />
     <Crd/>
     <Crd/>
     <Crd/>
     <Crd/>
-    <Crd/> */}
-    {/* <About/> */}
-    <FooterSocial/>
+    <Crd/>
+    <Crd/>
+    <About/>
     </Appcontainer>
   );
 }
