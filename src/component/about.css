@@ -6,11 +6,30 @@
   margin: auto;
 }
 .section-container .con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     flex:  0 0 auto;
     width: 50%;
     
 }
-
+@media (max-width:990px) {
+  .section-container{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .con{
+    width: 100% !important;
+  }
+  .con img{
+    width: 100% !important;
+  }
+  .content-container{
+    width: 100% !important;
+    height: 100%;
+    }
+}
 .con img{
 height: 100%;
 width: 80%;
