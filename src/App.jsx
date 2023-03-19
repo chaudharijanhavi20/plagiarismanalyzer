@@ -4,16 +4,18 @@ import './App.css';
 import React from 'react';
 import Crd from './component/Crd';
 import styled from 'styled-components';
+import About from './component/About';
 
 function App() {
   return (
     <Appcontainer>
+    {/* <Crd/>
     <Crd/>
     <Crd/>
     <Crd/>
     <Crd/>
-    <Crd/>
-    <Crd/>
+    <Crd/> */}
+    <About/>
     </Appcontainer>
   );
 }
