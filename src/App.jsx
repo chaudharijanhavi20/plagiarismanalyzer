@@ -5,6 +5,8 @@ import React from 'react';
 import Crd from './component/Crd';
 import styled from 'styled-components';
 import About from './component/About';
+import  FooterSocial from './component/FooterSocial';
+
 import Navbar from './component/Navbar';
 
 function App() {
