@@ -1,7 +1,7 @@
 
 .card{
     width: 250px;
-    height: 340px;
+    height: 300px;
     background: white;
     border-radius: 10px;
     box-shadow:  0px 1px 10px 1px;
@@ -16,17 +16,18 @@
 
 .image img{
     background: white;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+    margin: auto;
     border-radius: 50%;
     padding: 5px;
-    transform: translate(43px,15px);
+    transform: translate(55px,15px);
     transition-duration: 0.5s;
     animation: ease-out;
 }
 img:hover{
     
-   opacity: 0.6;
+   opacity: 0.8;
   
 }
 /* img{
@@ -34,7 +35,7 @@ img:hover{
 } */
 
 .lower-container {
-   margin-top: 120px;
+   margin-top: 90px;
     text-align: center;
     font-weight: 500;
     color: white;
