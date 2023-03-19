@@ -5,6 +5,8 @@ import React from 'react';
 import Crd from './component/Crd';
 import styled from 'styled-components';
 import About from './component/About';
+import  FooterSocial from './component/FooterSocial';
+
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
     <Crd/>
     <Crd/>
     <Crd/> */}
-    <About/>
+    {/* <About/> */}
+    <FooterSocial/>
     </Appcontainer>
   );
 }
