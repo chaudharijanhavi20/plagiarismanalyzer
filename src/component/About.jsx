@@ -67,8 +67,8 @@ const Aboutcontainer = styled.div`
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  background-color: #191825;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 5rem;
   .con h1 {
     color: #865dff;
@@ -77,12 +77,58 @@ const Aboutcontainer = styled.div`
   .con p{
     font-size: 1.5rem;
   }
+  .section-container{
+    background-color: white !important;
+  }
   @media (max-width: 990px) {
     padding: 1rem;
     .con p{
     font-size: 1rem;
   }
   }
+  .section-container{
+    display: flex;
+    align-items: center;
+  height: 50%;
+  width: 100%;
+  padding: 2rem;
+  margin: auto;
+}
+.section-container .con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex:  0 0 auto;
+    width: 50%;
+    
+}
+@media (max-width:990px) {
+  .section-container{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .con{
+    width: 100% !important;
+  }
+  .con img{
+    width: 100% !important;
+  }
+  .content-container{
+    width: 100% !important;
+    height: 100%;
+    }
+}
+.con img{
+height: 100%;
+width: 80%;
+}
+.content-container{
+width: 80%;
+height: 100%;
+}
+
+
 `;
 
 export default About;
