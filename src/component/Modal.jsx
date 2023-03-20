@@ -23,7 +23,7 @@ const style = {
 };
 
 export default function TransitionsModal(props) {
-  const { urlobj, seturlobj,open,setOpen } = React.useContext(MyContext);
+  const { urlobj, seturlobj,open,setOpen,setscore,setshowscore } = React.useContext(MyContext);
   // const [apiroute, setapiroute] = React.useState("");
 
   console.log(urlobj);
@@ -66,7 +66,9 @@ export default function TransitionsModal(props) {
         },
       })
       .then((response) => {
-        console.log(response);
+        setscore(Number((response.data.Score).toFixed(1)))
+        setshowscore(true)
+        setOpen(!open)
       })
       .catch((error) => {
         console.log(error);
@@ -79,7 +81,6 @@ export default function TransitionsModal(props) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

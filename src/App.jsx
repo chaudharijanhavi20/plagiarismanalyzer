@@ -5,9 +5,11 @@ import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
 import FooterSocial from "./component/FooterSocial";
+import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
 import "react-dropzone-uploader/dist/styles.css";
 import { createContext, useContext } from "react";
+import Score from "./component/Score";
 
 export const MyContext = createContext({});
 function App() {
@@ -20,11 +22,15 @@ function App() {
     normal: false,
   });
   const [open, setOpen] = React.useState(false);
+  const [score, setscore] = React.useState(0);
+  const [showscore,setshowscore]=useState(false)
 
   return (
-    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
+    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore }}>
       <Appcontainer>
         <Navbar />
+        <Score />
+        <TransitionsModal />
         <div className="maincontainer">
           <div className="leftmain">
             <Crd type={"imgtotext"} />
