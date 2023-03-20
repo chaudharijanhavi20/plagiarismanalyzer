@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-scroll";
-import plagiarism from "../assests/plagiarism.png"
+import plagiarism from "../assests/plagiarism.jpg"
 // import { useNavigate } from "react-router-dom";
 export default function Navbar() {
 //   let navigate = useNavigate();

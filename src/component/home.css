@@ -16,8 +16,12 @@
     
 }
 .content-container h1{
-    color: white;
+    color: #865DFF;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 .content-container h3{
     color: white;
+    text-align: center;
 }
