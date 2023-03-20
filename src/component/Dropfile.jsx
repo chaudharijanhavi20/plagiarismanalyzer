@@ -25,6 +25,9 @@ const DropFileInput = props => {
             setFileList(updatedList);
             props.onFileChange(updatedList);
         }
+        if (fileList.length=2) {
+            console.log(fileList)
+        }
     }
 
     const fileRemove = (file) => {
@@ -45,9 +48,9 @@ const DropFileInput = props => {
             >
                 <div className="drop-file-input__label">
                     <img src={uploadImg} alt="" />
-                    <p>Drag & Drop your files here</p>
+                    <p>Drag & Drop your files here Max 2 files</p>
                 </div>
-                <input type="file" value="" onChange={onFileDrop}/>
+                <input type="file" value="" onChange={onFileDrop} multiple/>
             </div>
             {
                 fileList.length > 0 ? (

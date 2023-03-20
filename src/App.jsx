@@ -1,39 +1,47 @@
-import logo from "./logo.svg";
 import "./App.css";
 import mainlogo from "./assests/main.gif";
-import React from "react";
+import React, { useState } from "react";
 import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
 import FooterSocial from "./component/FooterSocial";
-import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
-import 'react-dropzone-uploader/dist/styles.css';
+import "react-dropzone-uploader/dist/styles.css";
+import { createContext, useContext } from "react";
+
+export const MyContext = createContext({});
 function App() {
-  const onFileChange = (files) => {
-    console.log(files);
-}
+  const [urlobj, seturlobj] = useState({
+    imgtotext: false,
+    wordtotext: false,
+    pdftotext: false,
+    imagefeature: false,
+    handwritten: false,
+    normal: false,
+  });
+  const [open, setOpen] = React.useState(false);
+
   return (
-    <Appcontainer>
-      <Navbar />
-      <TransitionsModal />
-      {/* <NoUpload /> */}
-      <input type="file" name="" id="" />
-      <div className="maincontainer">
-        <div className="leftmain">
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
+    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
+      <Appcontainer>
+        <Navbar />
+        <input type="file" name="" id="" />
+        <div className="maincontainer">
+          <div className="leftmain">
+            <Crd type={"imgtotext"} />
+            <Crd type={"wordtotext"} />
+            <Crd type={"pdftotext"} />
+            <Crd type={"imagefeature"} />
+            <Crd type={"handwritten"} />
+            <Crd type={"normal"} />
+          </div>
+          <div className="rightmain">
+            <img src={mainlogo} alt="" srcset="" />
+          </div>
         </div>
-        <div className="rightmain">
-          <img src={mainlogo} alt="" srcset="" />
-        </div>
-      </div>
-      <About />
-    </Appcontainer>
+        <About />
+      </Appcontainer>
+    </MyContext.Provider>
   );
 }
 const Appcontainer = styled.div`
@@ -43,22 +51,22 @@ const Appcontainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 1rem;
-  .maincontainer{
+  .maincontainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  @media (max-width:990px) {
-    .maincontainer{
+  @media (max-width: 990px) {
+    .maincontainer {
       flex-direction: column;
     }
     .leftmain {
-    width: 100%;
-  }
-  .rightmain {
-    width: 100% !important;
-  }
+      width: 100%;
+    }
+    .rightmain {
+      width: 100% !important;
+    }
   }
   .leftmain {
     width: 60%;
@@ -74,7 +82,7 @@ const Appcontainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .rightmain img{
+  .rightmain img {
     width: 100%;
     height: 100%;
   }

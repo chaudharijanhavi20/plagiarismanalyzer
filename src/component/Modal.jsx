@@ -4,19 +4,18 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import axios from 'axios';
-import Dropzone from 'react-dropzone-uploader';
-import 'react-dropzone-uploader/dist/styles.css';
+import axios from "axios";
+import "react-dropzone-uploader/dist/styles.css";
 import DropFileInput from "./Dropfile";
+import { MyContext } from "../App";
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   Width: 350,
-  maxHeight:800,
-  overflowY:'auto',
+  maxHeight: 800,
+  overflowY: "auto",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -24,39 +23,59 @@ const style = {
 };
 
 export default function TransitionsModal(props) {
-  const onFileChange = (files) => {
-    console.log(files);
-}
-  console.log(props)
-  const [open, setOpen] = React.useState(false);
+  const { urlobj, seturlobj,open,setOpen } = React.useContext(MyContext);
+  // const [apiroute, setapiroute] = React.useState("");
+
+  console.log(urlobj);
+ 
+  const onFileChange = async (files) => {
+    let apiroute=''
+    if (files.length === 2) {
+      const formData = new FormData();
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
+      switch (true) {
+        case urlobj.imgtotext:
+          apiroute="http://127.0.0.1:8000/imgtotext/";
+          console.log(apiroute)
+          break;
+        case urlobj.wordtotext:
+          apiroute="http://127.0.0.1:8000/wordtotext/";
+          break;
+        case urlobj.pdftotext:
+          apiroute="http://127.0.0.1:8000/pdftotext/";
+          break;
+        case urlobj.imagefeature:
+          apiroute="http://127.0.0.1:8000/imagefeature/";
+          break;
+        case urlobj.handwritten:
+          apiroute="http://127.0.0.1:8000/handwritten/";
+          break;
+        case urlobj.normal:
+          apiroute="http://127.0.0.1:8000/normal/";
+          break;
+        default:
+          break;
+      }
+      console.log(apiroute)
+      axios
+      .post(apiroute, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    }
+  };
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [uploadedFiles, setUploadedFiles] = React.useState([]);
-  const Standard = () => {
-    const getUploadParams = () => {
-      return { url: 'https://httpbin.org/post' }
-    }
-  
-    const handleChangeStatus = ({ meta }, status) => {
-      console.log(status, meta)
-    }
-  
-    const handleSubmit = (files, allFiles) => {
-      console.log(files.map(f => f.meta))
-      allFiles.forEach(f => f.remove())
-    }
-  
-    return (
-      <Dropzone
-        getUploadParams={getUploadParams}
-        onChangeStatus={handleChangeStatus}
-        onSubmit={handleSubmit}
-        styles={{ dropzone: { minHeight: 200, maxHeight: 250 } }}
-      />
-    )
-  }
-  
-
 
   return (
     <div>
@@ -76,7 +95,7 @@ export default function TransitionsModal(props) {
       >
         <Fade in={open}>
           <Box sx={style}>
-          <DropFileInput onFileChange={(files) => onFileChange(files)}/>
+            <DropFileInput onFileChange={(files) => onFileChange(files)} />
           </Box>
         </Fade>
       </Modal>
