@@ -25,7 +25,6 @@ function App() {
     <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
       <Appcontainer>
         <Navbar />
-        <input type="file" name="" id="" />
         <div className="maincontainer">
           <div className="leftmain">
             <Crd type={"imgtotext"} />
