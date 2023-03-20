@@ -6,13 +6,19 @@ import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
 import FooterSocial from "./component/FooterSocial";
-
+import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
-
+import 'react-dropzone-uploader/dist/styles.css';
 function App() {
+  const onFileChange = (files) => {
+    console.log(files);
+}
   return (
     <Appcontainer>
       <Navbar />
+      <TransitionsModal />
+      {/* <NoUpload /> */}
+      <input type="file" name="" id="" />
       <div className="maincontainer">
         <div className="leftmain">
           <Crd />
