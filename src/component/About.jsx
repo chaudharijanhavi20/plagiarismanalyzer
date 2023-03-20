@@ -67,11 +67,11 @@ const Aboutcontainer = styled.div`
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  background-color: #191825;
-  color: white;
+ 
+  color: #000000;
   padding: 5rem;
   .con h1 {
-    color: #865dff;
+    color: #000000;
     text-align: center;
   }
   .con p{
