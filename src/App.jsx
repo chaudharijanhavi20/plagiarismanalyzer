@@ -1,11 +1,12 @@
 import "./App.css";
-import mainlogo from "./assests/main.gif";
+
 import React, { useState } from "react";
 import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
 import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
+import Home from "./component/Home"
 
 import { createContext, useContext } from "react";
 import Score from "./component/Score";
@@ -29,21 +30,19 @@ function App() {
     <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore }}>
       <Appcontainer>
         <Navbar />
+        <Home/>
         <Score />
         <TransitionsModal />
-        <div className="maincontainer">
-          <div className="leftmain">
+        
             <Crd type={"imgtotext"} />
             <Crd type={"wordtotext"} />
             <Crd type={"pdftotext"} />
             <Crd type={"imagefeature"} />
             <Crd type={"handwritten"} />
             <Crd type={"normal"} />
-          </div>
-          <div className="rightmain">
-            <img src={mainlogo} alt="" srcset="" />
-          </div>
-        </div>
+       
+          
+       
         <About />
         <Footer/>
       </Appcontainer>

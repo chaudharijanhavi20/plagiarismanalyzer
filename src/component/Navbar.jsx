@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-scroll";
+import plagiarism from "../assests/plagiarism.png"
 // import { useNavigate } from "react-router-dom";
 export default function Navbar() {
 //   let navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function Navbar() {
   return (
     <Navbarcomponent>
       <div className="navleft">
-        <img  alt="" srcset="" />
+        <img src={plagiarism} alt="" srcset="" />
       </div>
       <div className="navcenter">
         <ul>
@@ -107,26 +108,13 @@ const Navbarcomponent = styled.div`
   align-items: center;
   background-color: #191825;
     color: white;
-  border-bottom: 0.3rem solid #865DFF;
+  /* border-bottom: 0.3rem solid #865DFF; */
   z-index: 1000;
   .navleft img {
-    width: 10rem;
-    height: 3rem;
+    width: 8.5rem;
+    height: 4.5rem;
   }
-  .username {
-    color: #02bb86;
-    font-weight: bold;
-    font-size: 1.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-  .navleft {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-  }
+
   .innernav {
     display: flex;
     justify-content: space-evenly;
@@ -154,7 +142,7 @@ const Navbarcomponent = styled.div`
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    padding: 0 10px;
+    padding: 0 8px;
   }
   .navcenter a::after {
     content: "";
