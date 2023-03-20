@@ -1,5 +1,5 @@
 import React from "react";
-import "./crd.css";
+import "./cards.css";
 import { MyContext } from "../App";
 function Crd(props) {
   const { urlobj, seturlobj, open, setOpen } = React.useContext(MyContext);
@@ -38,10 +38,7 @@ function Crd(props) {
         </div>
       </div>
     </div>
-    <div className='lower-container'>
-    <p>Plagiarism Checker X is one of the most reliable and easy-to-use plagiarism detectors on the market. </p>
-        <button>Upload file</button>
-    </div>
+    
    
    
    </>

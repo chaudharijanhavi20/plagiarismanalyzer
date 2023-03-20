@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
-import FooterSocial from "./component/FooterSocial";
+import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
-import "react-dropzone-uploader/dist/styles.css";
+
 import { createContext, useContext } from "react";
-import { Footer } from "@mantine/core";
+import Footer from "./component/Footer"
 
 export const MyContext = createContext({});
 function App() {
@@ -28,6 +28,7 @@ function App() {
     <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
       <Appcontainer>
         <Navbar />
+        <TransitionsModal/>
         <div className="maincontainer">
           <div className="leftmain">
             <Crd type={"imgtotext"} />

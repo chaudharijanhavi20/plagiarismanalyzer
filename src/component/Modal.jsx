@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import "react-dropzone-uploader/dist/styles.css";
+
 import DropFileInput from "./Dropfile";
 import { MyContext } from "../App";
 const style = {
