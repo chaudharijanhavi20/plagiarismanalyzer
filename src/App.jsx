@@ -11,6 +11,8 @@ import Home from "./component/Home"
 import { createContext, useContext } from "react";
 import Score from "./component/Score";
 import Footer from "./component/Footer"
+import Referencecomp from "./component/reference";
+import Scanneddoc from "./component/Scanned";
 
 export const MyContext = createContext({});
 function App() {
@@ -21,25 +23,40 @@ function App() {
     imagefeature: false,
     handwritten: false,
     normal: false,
+    getreference: false,
+    pdfmerge: false,
+    scannedpdf: false,
+    extractimage: false,
   });
   const [open, setOpen] = React.useState(false);
   const [score, setscore] = React.useState(0);
   const [showscore,setshowscore]=useState(false)
-
+  const [showreference,setshowreference]=useState(false)
+  const [referencedata,setreferencedata]=React.useState("")
+  const [scannedtext,setscannedtext]=useState("")
+  const [showscannedtext,showsetscannedtext]=useState("")
   return (
-    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore }}>
+    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore ,showreference,setshowreference,referencedata,setreferencedata,scannedtext,setscannedtext,showscannedtext,showsetscannedtext}}>
       <Appcontainer>
         <Navbar />
+        <Referencecomp />
+        <Scanneddoc />
         <Home/>
         <Score />
         <TransitionsModal />
         
-            <Crd type={"imgtotext"} />
+           <div className="cardcontainer">
+           <Crd type={"imgtotext"} />
             <Crd type={"wordtotext"} />
             <Crd type={"pdftotext"} />
             <Crd type={"imagefeature"} />
             <Crd type={"handwritten"} />
             <Crd type={"normal"} />
+            <Crd type={"getreference"} />
+            <Crd type={"pdfmerge"} />
+            <Crd type={"scannedpdf"} />
+            <Crd type={"extractimage"} />
+           </div>
        
           
        
@@ -55,12 +72,19 @@ const Appcontainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  gap: 1rem;
   .maincontainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
   }
   @media (max-width: 990px) {
     .maincontainer {

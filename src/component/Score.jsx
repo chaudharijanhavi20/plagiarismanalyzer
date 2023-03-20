@@ -5,7 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { MyContext } from "../App";
 import CloseIcon from '@mui/icons-material/Close';
 export default function Score() {
-    const { score,showscore,setshowscore } = React.useContext(MyContext);
+    const { score,showscore,setshowscore,showreference,setshowreference,referencedata,setreferencedata } = React.useContext(MyContext);
     
     let emoji=''
     if(score<20){
