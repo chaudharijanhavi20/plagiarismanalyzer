@@ -9,8 +9,8 @@ import './Footer.css'
 const Muigridfooter = () => {
   return (
     <>
-      <Container style={{backgroundColor:'#191825',width:'100%'}}>
-        <Grid container spcing={3}>
+      <Container style={{backgroundColor:'#191825',width:'100%',padding:'1rem'}}>
+        <Grid container spcing={5}>
          
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Typography variant="h4" sx={{ margin: "1px" }}>
