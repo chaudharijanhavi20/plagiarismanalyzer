@@ -30,26 +30,19 @@ function App() {
     <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore }}>
       <Appcontainer>
         <Navbar />
-<<<<<<< HEAD
         <Home/>
-        <TransitionsModal/>
-        
-         
-=======
         <Score />
         <TransitionsModal />
-        <div className="maincontainer">
-          <div className="leftmain">
->>>>>>> 7d4e836120bb7839e580bf8b34cd534d39b78a83
+        
             <Crd type={"imgtotext"} />
             <Crd type={"wordtotext"} />
             <Crd type={"pdftotext"} />
             <Crd type={"imagefeature"} />
             <Crd type={"handwritten"} />
             <Crd type={"normal"} />
-        
+       
           
-        
+       
         <About />
         <Footer/>
       </Appcontainer>
