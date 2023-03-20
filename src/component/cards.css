@@ -1,45 +1,41 @@
 
 .card{
     width: 250px;
-    height: 300px;
+    height: 340px;
     background: white;
     border-radius: 10px;
     box-shadow:  0px 1px 10px 1px;
    overflow: hidden;
-   background-color: #191825;
     
 }
 .upper-container{
     height: 70px;
-    background: linear-gradient(to left,rgb(156, 159, 160),91825);
+    background: linear-gradient(to left,rgb(156, 159, 160),rgb(1, 16, 20));
 }
 
 .image img{
     background: white;
-    width: 120px;
-    height: 120px;
-    margin: auto;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     padding: 5px;
-    transform: translate(55px,15px);
+    transform: translate(43px,15px);
     transition-duration: 0.5s;
     animation: ease-out;
 }
 img:hover{
     
-   opacity: 0.8;
+   opacity: 0.6;
   
 }
-/* img{
-    border:  2px solid #865DFF;
-} */
+img{
+    border:  2px solid rgb(1, 16, 20);
+}
 
 .lower-container {
-   margin-top: 90px;
+   margin-top: 120px;
     text-align: center;
     font-weight: 500;
-    color: white;
-
    
 }
 .lower-container p{
@@ -52,14 +48,14 @@ button{
     font-weight: bold;
     color: black;
     background: white;
-    border: 2px solid #E384FF;
+    border: 2px solid rgb(127, 33, 242);
     border-radius: 6px;
     padding: 0.6rem;
     transition-duration: 0.5s;
     animation: ease-in-out;
 }
 button:hover{
-    background:linear-gradient(to left,rgb(132, 135, 136),#865DFF);
+    background:linear-gradient(to left,rgb(180, 138, 239),rgb(127, 33, 227));
     transform: scale(1.1);
     color: white;
 }

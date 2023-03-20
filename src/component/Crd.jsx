@@ -1,5 +1,5 @@
 import React from "react";
-import "./crd.css";
+import "./cards.css";
 import { MyContext } from "../App";
 function Crd(props) {
   const { urlobj, seturlobj, open, setOpen } = React.useContext(MyContext);
@@ -17,6 +17,7 @@ function Crd(props) {
     console.log(urlobj)
   }
   return (
+    <>
     <div className="crd">
       <div className="card">
         <div className="upper-container">
@@ -38,7 +39,12 @@ function Crd(props) {
         </div>
       </div>
     </div>
-  );
+    
+   
+   
+   </>
+  )
+
 }
 
 export default Crd;
