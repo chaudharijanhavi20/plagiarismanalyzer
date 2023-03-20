@@ -14,6 +14,7 @@ function Crd(props) {
       return result;
     }, {});
     seturlobj(updatedObject)
+    console.log(urlobj)
   }
   return (
     <>

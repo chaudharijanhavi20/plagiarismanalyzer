@@ -9,6 +9,7 @@ import Navbar from "./component/Navbar";
 import Home from "./component/Home"
 
 import { createContext, useContext } from "react";
+import Score from "./component/Score";
 import Footer from "./component/Footer"
 
 export const MyContext = createContext({});
@@ -22,17 +23,24 @@ function App() {
     normal: false,
   });
   const [open, setOpen] = React.useState(false);
+  const [score, setscore] = React.useState(0);
+  const [showscore,setshowscore]=useState(false)
 
   return (
-
-    
-    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
+    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen,score,setscore,showscore,setshowscore }}>
       <Appcontainer>
         <Navbar />
+<<<<<<< HEAD
         <Home/>
         <TransitionsModal/>
         
          
+=======
+        <Score />
+        <TransitionsModal />
+        <div className="maincontainer">
+          <div className="leftmain">
+>>>>>>> 7d4e836120bb7839e580bf8b34cd534d39b78a83
             <Crd type={"imgtotext"} />
             <Crd type={"wordtotext"} />
             <Crd type={"pdftotext"} />
