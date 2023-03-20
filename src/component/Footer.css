@@ -1,0 +1,13 @@
+.css-1oqqzyl-MuiContainer-root{
+    width: 100% !important;
+}
+@media (min-width: 1200px){
+.css-1oqqzyl-MuiContainer-root {
+    max-width: 1800px !important;
+}}
+.css-1oqqzyl-MuiContainer-root h4{
+    color: #865DFF;
+}
+.css-1oqqzyl-MuiContainer-root h6{
+    color: white;
+}

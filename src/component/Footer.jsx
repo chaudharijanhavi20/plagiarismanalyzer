@@ -1,11 +1,15 @@
 import { Container, Grid, Typography } from "@mui/material";
 import React from 'react';
-import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import CloudDoneIcon from '@mui/icons-material/CloudDone';
+import './Footer.css'
 const Muigridfooter = () => {
   return (
     <>
-      <Container>
+      <Container style={{backgroundColor:'#191825',width:'100%'}}>
         <Grid container spcing={3}>
          
           <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -53,23 +57,23 @@ const Muigridfooter = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Typography variant="h4" sx={{ margin: "2px" }}>
-              Connects
+             <CloudDoneIcon /> Connects
             </Typography>
             <Typography variant="h6" sx={{ margin: "1px" }}>
               {" "}
-              Facebook
+             <FacebookIcon /> Facebook
             </Typography>
             <Typography variant="h6" sx={{ margin: "1px" }}>
               {" "}
-              Instagram
+             <InstagramIcon /> Instagram
             </Typography>
             <Typography variant="h6" sx={{ margin: "1px" }}>
               {" "}
-              Github
+             <GitHubIcon /> Github
             </Typography>
             <Typography variant="h6" sx={{ margin: "1px" }}>
               {" "}
-              Linkedin
+             <LinkedInIcon /> Linkedin
             </Typography>
            
           </Grid>
@@ -91,29 +95,6 @@ const Muigridfooter = () => {
             </Typography>
           </Grid>
          
-      <MDBBtn className='m-1' style={{ backgroundColor: '#3b5998' }} href='#'>
-        <MDBIcon fab icon='facebook-f' />
-      </MDBBtn>
-
-      <MDBBtn className='m-1' style={{ backgroundColor: '#55acee' }} href='#'>
-        <MDBIcon fab icon='twitter' />
-      </MDBBtn>
-
-      <MDBBtn className='m-1' style={{ backgroundColor: '#ac2bac' }} href='#'>
-        <MDBIcon fab icon='instagram' />
-      </MDBBtn>
-
-      <MDBBtn className='m-1' style={{ backgroundColor: '#0082ca' }} href='#'>
-        <MDBIcon fab icon='linkedin-in' />
-      </MDBBtn>
-
-      <MDBBtn className='m-1' style={{ backgroundColor: '#333333' }} href='#'>
-        <MDBIcon fab icon='github' />
-      </MDBBtn>
-
-      <MDBBtn className='m-1' style={{ backgroundColor: '#25d366' }} href='#'>
-        <MDBIcon fab icon='whatsapp' />
-      </MDBBtn>
     
         </Grid>
       </Container>

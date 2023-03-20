@@ -2,7 +2,7 @@
 .card{
     width: 250px;
     height: 340px;
-    background: white;
+    background: #191825;
     border-radius: 10px;
     box-shadow:  0px 1px 10px 1px;
    overflow: hidden;
@@ -10,7 +10,7 @@
 }
 .upper-container{
     height: 70px;
-    background: linear-gradient(to left,rgb(156, 159, 160),rgb(1, 16, 20));
+    /* background: linear-gradient(to left,rgb(156, 159, 160),rgb(1, 16, 20)); */
 }
 
 .image img{
@@ -34,6 +34,7 @@ img:hover{
    margin-top: 120px;
     text-align: center;
     font-weight: 500;
+    color: white;
    
 }
 .lower-container p{
