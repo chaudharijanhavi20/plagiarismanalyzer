@@ -1,4 +1,4 @@
-.section-container{
+.section-containers{
     display: flex;
     align-items: center;
   height: 50%;
@@ -7,7 +7,7 @@
   margin: auto;
   background-color: #191825;
 }
-.section-container .con{
+.section-containers .con{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,13 +15,13 @@
     width: 50%;
     
 }
-.content-container h1{
+.content-containers h2{
     color: #865DFF;
     text-align: center;
     font-size: 3rem;
     font-family: 'Times New Roman', Times, serif;
 }
-.content-container h3{
+.content-containers h3{
     color: white;
     text-align: center;
 }
