@@ -1,37 +1,50 @@
-import logo from "./logo.svg";
 import "./App.css";
 import mainlogo from "./assests/main.gif";
-import React from "react";
+import React, { useState } from "react";
 import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
-import Footer from "./component/Footer";
-
+import FooterSocial from "./component/FooterSocial";
 import Navbar from "./component/Navbar";
-import Home from "./component/Home";
+import "react-dropzone-uploader/dist/styles.css";
+import { createContext, useContext } from "react";
+import { Footer } from "@mantine/core";
 
+export const MyContext = createContext({});
 function App() {
+  const [urlobj, seturlobj] = useState({
+    imgtotext: false,
+    wordtotext: false,
+    pdftotext: false,
+    imagefeature: false,
+    handwritten: false,
+    normal: false,
+  });
+  const [open, setOpen] = React.useState(false);
+
   return (
-    <Appcontainer>
-      <Navbar />
-      <div className="maincontainer">
-        <div className="leftmain">
-        <Home/>
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
-          <Crd />
-        </div>
-        <div className="rightmain">
-          <img src={mainlogo} alt="" srcset="" />
-        </div>
-      </div>
-      <About />
-      <Footer/>
-    </Appcontainer>
+
     
+    <MyContext.Provider value={{ urlobj, seturlobj, open, setOpen }}>
+      <Appcontainer>
+        <Navbar />
+        <div className="maincontainer">
+          <div className="leftmain">
+            <Crd type={"imgtotext"} />
+            <Crd type={"wordtotext"} />
+            <Crd type={"pdftotext"} />
+            <Crd type={"imagefeature"} />
+            <Crd type={"handwritten"} />
+            <Crd type={"normal"} />
+          </div>
+          <div className="rightmain">
+            <img src={mainlogo} alt="" srcset="" />
+          </div>
+        </div>
+        <About />
+        <Footer/>
+      </Appcontainer>
+    </MyContext.Provider>
   );
 }
 const Appcontainer = styled.div`
@@ -41,22 +54,22 @@ const Appcontainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 1rem;
-  .maincontainer{
+  .maincontainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  @media (max-width:990px) {
-    .maincontainer{
+  @media (max-width: 990px) {
+    .maincontainer {
       flex-direction: column;
     }
     .leftmain {
-    width: 100%;
-  }
-  .rightmain {
-    width: 100% !important;
-  }
+      width: 100%;
+    }
+    .rightmain {
+      width: 100% !important;
+    }
   }
   .leftmain {
     width: 60%;
@@ -72,7 +85,7 @@ const Appcontainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .rightmain img{
+  .rightmain img {
     width: 100%;
     height: 100%;
   }
