@@ -5,9 +5,10 @@ import React from "react";
 import Crd from "./component/Crd";
 import styled from "styled-components";
 import About from "./component/About";
-import FooterSocial from "./component/FooterSocial";
+import Footer from "./component/Footer";
 
 import Navbar from "./component/Navbar";
+import Home from "./component/Home";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <div className="maincontainer">
         <div className="leftmain">
+        <Home/>
           <Crd />
           <Crd />
           <Crd />
@@ -27,7 +29,9 @@ function App() {
         </div>
       </div>
       <About />
+      <Footer/>
     </Appcontainer>
+    
   );
 }
 const Appcontainer = styled.div`

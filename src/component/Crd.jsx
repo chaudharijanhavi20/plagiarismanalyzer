@@ -1,5 +1,6 @@
-import React from 'react'
-import './crd.css';
+import React from 'react';
+import "./cards.css";
+
 
 function Crd() {
   return (
@@ -16,6 +17,7 @@ function Crd() {
     </div>
    </div>
    </div>
+   
   )
 }
 
