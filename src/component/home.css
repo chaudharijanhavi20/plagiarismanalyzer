@@ -1,0 +1,23 @@
+.section-container{
+    display: flex;
+    align-items: center;
+  height: 50%;
+  width: 100%;
+  
+  margin: auto;
+  background-color: #191825;
+}
+.section-container .con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex:  0 0 auto;
+    width: 50%;
+    
+}
+.content-container h1{
+    color: white;
+}
+.content-container h3{
+    color: white;
+}
