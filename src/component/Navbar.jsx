@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-scroll";
-import plagiarism from "../assests/plagiarism.jpg"
+import logo from "../assests/logo.png"
 // import { useNavigate } from "react-router-dom";
 export default function Navbar() {
 //   let navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <Navbarcomponent>
       <div className="navleft">
-        <img src={plagiarism} alt="" srcset="" />
+        <img src={logo} alt="" srcset="" />
       </div>
       <div className="navcenter">
         <ul>

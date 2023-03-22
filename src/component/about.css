@@ -6,6 +6,16 @@
   padding: 2rem;
   margin: auto;
 }
+.head{
+  align-items: center;
+}
+.head header{
+  font-weight: bolder;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+ 
+}
 .section-container .con{
   display: flex;
   justify-content: center;
@@ -13,6 +23,9 @@
     flex:  0 0 auto;
     width: 50%;
     
+}
+.section-container h1{
+  font-weight: lighter;
 }
 @media (max-width:990px) {
   .section-container{
