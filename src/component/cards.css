@@ -2,7 +2,7 @@
 .card{
     width: 230px;
     height: 290px;
-    background: #191825;
+    background: white;
     border-radius: 10px;
     box-shadow:  0px 1px 10px 1px;
    overflow: hidden;
@@ -10,7 +10,7 @@
 }
 .upper-container{
     height: 70px;
-    /* background: linear-gradient(to left,rgb(156, 159, 160),rgb(1, 16, 20)); */
+    background: black;
 }
 
 .image img{
@@ -19,6 +19,7 @@
     height: 140px;
     border-radius: 50%;
     padding: 5px;
+    border-color: black;
     transform: translate(35px,15px);
     transition-duration: 0.5s;
     animation: ease-out;
@@ -34,7 +35,7 @@ img:hover{
    margin-top: 120px;
     text-align: center;
     font-weight: 500;
-    color: white;
+    color: black;
    
 }
 .lower-container p{
@@ -47,14 +48,13 @@ button{
     font-weight: bold;
     color: black;
     background: white;
-    border: 2px solid rgb(127, 33, 242);
+    border: 2px solid linear-gradient(to left,black,#865DFF);
     border-radius: 6px;
     padding: 0.6rem;
     transition-duration: 0.5s;
     animation: ease-in-out;
 }
 button:hover{
-    background:linear-gradient(to left,rgb(180, 138, 239),rgb(127, 33, 227));
-    transform: scale(1.1);
+    background: linear-gradient(to left,black,#865DFF);
     color: white;
 }

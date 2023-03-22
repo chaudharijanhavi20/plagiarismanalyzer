@@ -102,7 +102,7 @@ const Appcontainer = styled.div`
   .cardcontainer{
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 7rem;
     justify-content: center;
     align-items: center;
     margin: 2rem;
@@ -111,11 +111,12 @@ const Appcontainer = styled.div`
   .another{
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 7rem;
     justify-content: center;
     align-items: center;
     margin: 2rem;
    padding: 3rem;
+   margin-top: 2rem;
   }
 .heads{
   font-family: 'Times New Roman', Times, serif;
