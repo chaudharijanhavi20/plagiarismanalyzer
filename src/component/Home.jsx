@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="section-containers">
     <div className="con content">
-      <div className="content-container">
+      <div className="content-containers">
         <h2>Plagiarism Checker</h2>
         <h3>
           Our plagiarism detection tool uses DeepSearch™ Technology to
