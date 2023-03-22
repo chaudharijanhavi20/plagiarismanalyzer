@@ -23,7 +23,7 @@ function Crd(props) {
         <div className="upper-container">
           <div className="image">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/5100/5100994.png"
+              src={props.image}
               alt=""
               height="100px"
               width="100px"
@@ -31,10 +31,9 @@ function Crd(props) {
           </div>
         </div>
         <div className="lower-container">
-          <p>
-            Plagiarism Checker X is one of the most reliable and easy-to-use
-            plagiarism detectors on the market.{" "}
-          </p>
+          <h3>
+            {props.name}
+          </h3>
           <button onClick={handleclick}>{props.type}</button>
         </div>
       </div>

@@ -8,7 +8,11 @@ import image3 from "../assests/image3.gif";
 function About() {
   return (
     <Aboutcontainer>
+     <div className="head">
+      <header>Free Plagiarism Checker: How it Works</header>
+      </div>
       <div className="section-container">
+     
         <div className="con image1">
           <img src={image1}></img>
         </div>

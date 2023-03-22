@@ -6,13 +6,23 @@ import styled from "styled-components";
 import About from "./component/About";
 import TransitionsModal from "./component/Modal";
 import Navbar from "./component/Navbar";
-import Home from "./component/Home"
-
+import Home from "./component/Home";
+import imagetotext from "./assests/imagetotext.png";
+import imagefeature from "./assests/imagefeature.png";
+import pdftotext from "./assests/pdftotext.png";
+import wordtotext from "./assests/wordtotext.png";
+import handwritten from "./assests/handwritten.png";
+import texttoplagiarism from "./assests/texttoplagiarism.png";
+import reference from "./assests/reference.png";
+import mergepdf from "./assests/mergepdf.png";
+import scanpdf from "./assests/scanpdf.png";
+import exactpdf from "./assests/exactpdf.png";
 import { createContext, useContext } from "react";
 import Score from "./component/Score";
 import Footer from "./component/Footer"
 import Referencecomp from "./component/reference";
 import Scanneddoc from "./component/Scanned";
+import File from "./component/File";
 
 export const MyContext = createContext({});
 function App() {
@@ -45,22 +55,33 @@ function App() {
         <Score />
         <TransitionsModal />
         
+        <div className="heads">
+        <h1>Upload File You Want to Plagiarised</h1>
+        </div>
            <div className="cardcontainer">
-           <Crd type={"imgtotext"} />
-            <Crd type={"wordtotext"} />
-            <Crd type={"pdftotext"} />
-            <Crd type={"imagefeature"} />
-            <Crd type={"handwritten"} />
-            <Crd type={"normal"} />
-            <Crd type={"getreference"} />
-            <Crd type={"pdfmerge"} />
-            <Crd type={"scannedpdf"} />
-            <Crd type={"extractimage"} />
+           <Crd type={"imgtotext"} name={"Convert image to text"} image={imagetotext}/>
+            <Crd type={"wordtotext"} name={"Convert Word to text"} image={wordtotext}/>
+            <Crd type={"pdftotext"} name={"Convert pdf to text"} image={pdftotext}/>
+            <div className="another">
+            <Crd type={"imagefeature"} name={"floewchart to text"} image={imagefeature}/>
+            <Crd type={"handwritten"} name={"Handwritten Plagiarism"} image={handwritten}/>
+            <Crd type={"normal"} name={"Wite text to plagiarised"} image={texttoplagiarism}/>
+            </div>
+            {/* <Crd type={"getreference"} name={"Convert image to text"} image={reference}/>
+            <Crd type={"pdfmerge"} name={"PDF Merge"} image={mergepdf}/>
+            <Crd type={"scannedpdf"} name={"Scann PDF"} image={scanpdf}/>
+            <Crd type={"extractimage"} name={"Extract Image"} image={exactpdf}/> */}
+            
            </div>
-       
-          
-       
+      <div className="files">
+      <h1>Play With PDFs</h1>
+      <div className="middle">
+       <File/>
+       </div>
+       </div>
+   
         <About />
+        
         <Footer/>
       </Appcontainer>
     </MyContext.Provider>
@@ -81,10 +102,38 @@ const Appcontainer = styled.div`
   .cardcontainer{
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2.5rem;
     justify-content: center;
     align-items: center;
     margin: 2rem;
+    
+  }
+  .another{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+   padding: 3rem;
+  }
+.heads{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-right: 18rem;
+}
+  .files{
+    width: 100%;
+    height: 30%;
+    background-color: #191825;
+    height: 30vh;
+    align-items: center;
+  }
+
+  .files h1{
+    color: #865DFF;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
   }
   @media (max-width: 990px) {
     .maincontainer {
@@ -96,25 +145,15 @@ const Appcontainer = styled.div`
     .rightmain {
       width: 100% !important;
     }
+    .cardcontainer{
+    gap:2rem;
   }
-  .leftmain {
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+  .heads{
+    margin-right: 0.1rem;
   }
-  .rightmain {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  .rightmain img {
-    width: 100%;
-    height: 100%;
-  }
+  
+  
 `;
 
 export default App;
