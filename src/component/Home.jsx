@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="section-container">
     <div className="con content">
-      <div className="content-containers">
+      <div className="content-container">
         <h2>Plagiarism Checker</h2>
         <h3>
         To be specific, Plagiarism checking or content's similarity detection is a process of identifying the occurrence of plagiarism or copyright infringement within a work of content for writer, teacher, student blogger, webmaster, or any document.

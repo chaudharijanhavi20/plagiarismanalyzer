@@ -144,19 +144,19 @@ const Appcontainer = styled.div`
   .cardcontainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 7rem;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 2rem 0 0 0;
   }
   .another {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 7rem;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
-    padding: 3rem;
+    margin: 0 0 6rem 0;
+    
   }
   .heads {
     font-family: "Times New Roman", Times, serif;
@@ -169,12 +169,14 @@ const Appcontainer = styled.div`
     background-color: #191825;
     height: 30vh;
     align-items: center;
+    
   }
   .middle{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3.5rem;
   }
 @media (max-width:990px) {
   .middle{
@@ -202,6 +204,16 @@ const Appcontainer = styled.div`
     .heads {
       margin-right: 0.1rem;
     }
+    .another{
+      gap:2rem;
+    }
+    .files {
+    width: 100%;
+    height: 30%;
+    background-color: #191825;
+    height: 39vh;
+    align-items: center;
+  }
   }
 `;
 

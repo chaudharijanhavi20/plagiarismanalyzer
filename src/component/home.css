@@ -16,7 +16,7 @@
     
 }
 .content-container h2{
-    color: #865DFF;
+    color: #865DFF !important;
     text-align: center;
     font-size: 3rem;
     font-family: 'Times New Roman', Times, serif;
