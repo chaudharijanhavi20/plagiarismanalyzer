@@ -34,16 +34,6 @@ export default function File() {
     seturlobj,
     open,
     setOpen,
-    setscore,
-    setshowscore,
-    showreference,
-    setshowreference,
-    referencedata,
-    setreferencedata,
-    scannedtext,
-    setscannedtext,
-    showscannedtext,
-    showsetscannedtext,
   } = React.useContext(MyContext);
   const setdocs = () => {
     const currentset = document.querySelector(

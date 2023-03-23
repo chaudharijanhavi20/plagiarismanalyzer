@@ -3,7 +3,7 @@ import './home.css'
 import sec from '../assests/sec.webp'
 function Home() {
   return (
-    <div className="section-container">
+    <div className="section-container" id='home'>
     <div className="con content">
       <div className="content-container">
         <h2>Plagiarism Checker</h2>
@@ -13,7 +13,7 @@ function Home() {
       </div>
     </div>
     <div className="con image1">
-      <img src={sec}></img>
+      <img src={sec} alt={'newimg'}></img>
     </div>
   </div>
   )

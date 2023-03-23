@@ -8,13 +8,13 @@ import image3 from "../assests/image3.gif";
 function About() {
   return (
     <Aboutcontainer>
-     <div className="head">
+     <div className="head" id="about">
       <header>Free Plagiarism Checker: How it Works</header>
       </div>
       <div className="section-container">
      
         <div className="con image1">
-          <img src={image1}></img>
+          <img src={image1} alt={'aboutlogo'}></img>
         </div>
 
         <div className="con content">
@@ -41,13 +41,13 @@ function About() {
           </div>
         </div>
         <div className="con image1">
-          <img src={image2}></img>
+          <img src={image2} alt={'aboutlogo'}></img>
         </div>
       </div>
 
       <div className="section-container">
         <div className="con image1">
-          <img src={image3}></img>
+          <img src={image3} alt={'aboutlogo'}></img>
         </div>
 
         <div className="con content">

@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import LoginIcon from "@mui/icons-material/Login";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-scroll";
 import logo from "../assests/logo.png"
 // import { useNavigate } from "react-router-dom";
 export default function Navbar() {
 //   let navigate = useNavigate();
   const [close, setclose] = useState(false);
-  const navigationtopage = () => {
-    // navigate("/signup");
-  };
   const menuhandle = () => {
     const menu = document.querySelector(".navcenter");
     menu.classList.toggle("open");
     setclose(!close);
   };
-  function notificationsLabel(count) {
-    if (count === 0) {
-      return "no notifications";
-    }
-    if (count > 99) {
-      return "more than 99 notifications";
-    }
-    return `${count} notifications`;
-  }
 
   return (
     <Navbarcomponent>
@@ -40,6 +24,7 @@ export default function Navbar() {
           <li>
             <Link
             //   onClick={() => navigate("/")}
+            to={"home"}
               smooth={true}
               duration={500}
               className="link-pointer"
@@ -51,7 +36,7 @@ export default function Navbar() {
             <Link
               to={"about"}
               smooth={true}
-              duration={500}
+              duration={1000}
               className="link-pointer"
             >
               About
@@ -59,22 +44,22 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              to={"seller"}
+              to={"plag"}
               smooth={true}
-              duration={500}
+              duration={1000}
               className="link-pointer"
             >
-              Become A Seller
+              Plagarism Analyser
             </Link>
           </li>
           <li>
             <Link
-              to={"contact"}
+              to={"pdf"}
               smooth={true}
-              duration={500}
+              duration={1000}
               className="link-pointer"
             >
-              Contact
+              Play with pdf
             </Link>
           </li>
           {localStorage.getItem("isadmin") ? (
@@ -92,6 +77,13 @@ export default function Navbar() {
             ""
           )}
         </ul>
+      </div>
+      <div className="navright">
+        <div className="innernav">
+          <div className="menu-open" onClick={menuhandle}>
+            {close ? <CloseIcon /> : <MenuIcon />}
+          </div>
+        </div>
       </div>
 
     </Navbarcomponent>
@@ -175,6 +167,12 @@ const Navbarcomponent = styled.div`
   }
   @media (max-width: 990px) {
     height: 6rem;
+    .navleft{
+      flex: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .menu-open {
       display: block;
     }
@@ -228,16 +226,4 @@ const Navbarcomponent = styled.div`
       color: white;
     }
   }
-`;
-const Navbutton = styled.button`
-  padding: 0.8rem 2.5rem;
-  background-color: #865DFF;
-  border: none;
-  border-radius: 0.6rem;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  cursor: pointer;
 `;

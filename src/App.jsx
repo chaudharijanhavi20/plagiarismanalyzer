@@ -13,11 +13,7 @@ import pdftotext from "./assests/pdftotext.png";
 import wordtotext from "./assests/wordtotext.png";
 import handwritten from "./assests/handwritten.png";
 import texttoplagiarism from "./assests/texttoplagiarism.png";
-import reference from "./assests/reference.png";
-import mergepdf from "./assests/mergepdf.png";
-import scanpdf from "./assests/scanpdf.png";
-import exactpdf from "./assests/exactpdf.png";
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 import Score from "./component/Score";
 import Footer from "./component/Footer";
 import Referencecomp from "./component/reference";
@@ -74,7 +70,7 @@ function App() {
         <Score />
         <TransitionsModal />
 
-        <div className="heads">
+        <div className="heads" id="plag">
           <h1>Upload File You Want to Plagiarised</h1>
         </div>
         <div className="cardcontainer">
@@ -115,7 +111,7 @@ function App() {
             <Crd type={"scannedpdf"} name={"Scann PDF"} image={scanpdf}/>
             <Crd type={"extractimage"} name={"Extract Image"} image={exactpdf}/> */}
         </div>
-        <div className="files">
+        <div className="files"  id="pdf">
           <h1>Play With PDFs</h1>
           <div className="middle">
             <File />
