@@ -75,7 +75,7 @@ const Aboutcontainer = styled.div`
   color: black;
   padding: 5rem;
   .con h1 {
-    color: #000000;
+    color: #865DFF;
     text-align: center;
   }
   .con p{
