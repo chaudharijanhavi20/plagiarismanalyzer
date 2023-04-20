@@ -8,6 +8,7 @@ import DropFileInput from "./Dropfile";
 import { MyContext } from "../App";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { saveAs } from 'file-saver';
 const style = {
   position: "absolute",
   top: "50%",
@@ -23,8 +24,22 @@ const style = {
 };
 
 export default function TransitionsModal(props) {
-  const { urlobj, seturlobj, open, setOpen, setscore, setshowscore ,showreference,setshowreference,referencedata,setreferencedata,scannedtext,setscannedtext,showscannedtext,showsetscannedtext} =
-    React.useContext(MyContext);
+  const {
+    urlobj,
+    seturlobj,
+    open,
+    setOpen,
+    setscore,
+    setshowscore,
+    showreference,
+    setshowreference,
+    referencedata,
+    setreferencedata,
+    scannedtext,
+    setscannedtext,
+    showscannedtext,
+    showsetscannedtext,
+  } = React.useContext(MyContext);
   const [refernceurl, setrefernceurl] = React.useState("");
   // const [apiroute, setapiroute] = React.useState("");
 
@@ -44,9 +59,9 @@ export default function TransitionsModal(props) {
       .then((response) => {
         console.log(response);
         if (response.data.Score === undefined) {
-          setreferencedata(response.data)
+          setreferencedata(response.data);
           setOpen(!open);
-          setshowreference(true)
+          setshowreference(true);
         } else {
           setscore(Number(response.data.Score.toFixed(1)));
           setshowscore(true);
@@ -57,14 +72,53 @@ export default function TransitionsModal(props) {
         console.log(error);
       });
   };
+
   const onFileChange = async (files) => {
     let apiroute = "";
+    if (files.length === 1 && urlobj.extractimage) {
+      const formData = new FormData();
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
+      console.log(formData);
+      // Check if the FormData object has a file
+      if (formData.has("files")) {
+        console.log("FormData has a file");
+      } else {
+        console.log("FormData does not have a file");
+      }
+      const extract = async () => {
+        axios
+          .post("http://127.0.0.1:8000/pdf/extractimage/", formData, {
+            responseType: "arraybuffer", // tell Axios to expect binary data
+          })
+          .then((response) => {
+            const url = window.URL.createObjectURL(
+              new Blob([response.data], { type: "application/zip" })
+            );
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "my_file.zip";
+            link.style.display = "none";
+            document.body.appendChild(link);
+
+            link.click();
+
+            // Clean up the object URL and anchor element
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+          })
+          .catch((error) => console.error(error));
+      };
+      extract();
+    }
     if (files.length === 2 || urlobj.scannedpdf) {
       const formData = new FormData();
       files.forEach((file) => {
         formData.append("files", file);
       });
-  
+
       const getmain = () => {
         axios
           .post(apiroute, formData, {
@@ -86,6 +140,21 @@ export default function TransitionsModal(props) {
             console.log(error);
           });
       };
+      const mergepdf = () => {
+        axios
+          .post(apiroute, formData, {
+            responseType: 'blob',
+          })
+          .then((response) => {
+            const pdfBlob = new Blob([response.data], {
+              type: "application/pdf",
+            });
+            saveAs(pdfBlob, 'Merged.pdf');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
       const getpdf = () => {
         axios
           .post(apiroute, formData, {
@@ -97,9 +166,9 @@ export default function TransitionsModal(props) {
             console.log(response);
             if (response.data.Score === undefined) {
               setOpen(!open);
-              console.log(response)
-              setscannedtext(response.data.textdata)
-              showsetscannedtext(!showscannedtext)
+              console.log(response);
+              setscannedtext(response.data.textdata);
+              showsetscannedtext(!showscannedtext);
             } else {
               setscore(Number(response.data.Score.toFixed(1)));
               setshowscore(true);
@@ -110,6 +179,7 @@ export default function TransitionsModal(props) {
             console.log(error);
           });
       };
+
       switch (true) {
         case urlobj.imgtotext:
           apiroute = "http://127.0.0.1:8000/imgtotext/";
@@ -137,7 +207,7 @@ export default function TransitionsModal(props) {
           break;
         case urlobj.pdfmerge:
           apiroute = "http://127.0.0.1:8000/pdf/pdfmerge/";
-          getpdf();
+          mergepdf();
           break;
         case urlobj.scannedpdf:
           apiroute = "http://127.0.0.1:8000/pdf/scannedpdf/";
@@ -145,7 +215,7 @@ export default function TransitionsModal(props) {
           break;
         case urlobj.extractimage:
           apiroute = "http://127.0.0.1:8000/pdf/extractimage/";
-          getferencedata();
+          // extract();
           break;
         default:
           break;
@@ -181,7 +251,13 @@ export default function TransitionsModal(props) {
                   id="fullWidth"
                   onChange={(e) => setrefernceurl(e.target.value)}
                 />
-                <Button variant="contained" sx={{marginTop:2,textAlign:'center'}} onClick={getferencedata}>Get refernced model</Button>
+                <Button
+                  variant="contained"
+                  sx={{ marginTop: 2, textAlign: "center" }}
+                  onClick={getferencedata}
+                >
+                  Get refernced model
+                </Button>
               </>
             ) : (
               <DropFileInput onFileChange={(files) => onFileChange(files)} />
